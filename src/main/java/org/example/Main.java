@@ -40,6 +40,7 @@ public class Main {
             BankService bankService1 = new BankService(m);
             System.out.println(bankService1);
 
+            bankService1.interests(1.00);
             System.out.println(bankService1.split(bankAccount1));
         }
 }

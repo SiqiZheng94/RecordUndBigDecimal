@@ -7,7 +7,8 @@ import java.util.List;
 public class Account {
     private String accountNumber;
     private BigDecimal accountBalance = new BigDecimal("0");
-    //private Client client;
+    //private  List<Transaction> transactions= new ArrayList<>();
+
     private List<Client> clients = new ArrayList<>();
 
     public Account() {

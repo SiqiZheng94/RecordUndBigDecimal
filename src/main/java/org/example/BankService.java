@@ -53,6 +53,23 @@ public class BankService {
         }
         return newAccountNumbers;
     }
+    public void interests(double interestRate){
+        for (Account account:bankService.values()) {
+            BigDecimal originalBalance = account.getAccountBalance();
+            BigDecimal interest = originalBalance.multiply(BigDecimal.valueOf(interestRate/100));
+            account.deposit(interest);
+        }
+
+    }
+    public void dailyInterests(double interestRate){
+        for (Account account:bankService.values()) {
+            BigDecimal originalBalance = account.getAccountBalance();
+            BigDecimal dailyInterest = BigDecimal.valueOf(interestRate/365);
+            BigDecimal interest = originalBalance.multiply(dailyInterest);
+            account.deposit(interest);
+        }
+
+    }
     @Override
     public String toString() {
         return "BankService{" +
